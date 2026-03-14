@@ -5,6 +5,9 @@ pydantic==2.5.0
 pydantic-settings==2.1.0
 PyJWT==2.8.0  # 2.8.1 does not exist on PyPI; 2.8.0 is the closest lower version
 passlib[bcrypt]==1.7.4
+bcrypt==3.2.2          # bcrypt 4.0+ removed __about__ which passlib 1.7.4 reads; 3.2.2 is last compatible version
+cffi==2.0.0            # required by bcrypt 3.x; system cffi is compiled for Python 3.12, not 3.11
+cryptography==46.0.5   # system package is compiled for Python 3.12 and panics on Python 3.11; pip wheel fixes this
 python-dotenv==1.0.0
 pytesseract==0.3.10
 pdfplumber==0.10.3
