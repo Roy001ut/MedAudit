@@ -2,7 +2,7 @@ from pydantic_settings import BaseSettings
 from typing import List
 
 class Settings(BaseSettings):
-    DATABASE_URL: str = "postgresql://medaudit:password@localhost:5432/medaudit_db"
+    DATABASE_URL: str = "sqlite:///./medaudit.db"
     REDIS_URL: str = "redis://localhost:6379"
     CLAUDE_API_KEY: str
     OPENAI_API_KEY: str
